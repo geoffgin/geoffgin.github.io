@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIADS Milestone II</title>
+    <title>SIADS Milestone II: Pre-Existing Health Conditions</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,13 +14,72 @@
 
     <div class="container mt-5">
         <h1>SIADS Milestone II: Exploring the Impact of Pre-Existing Health Conditions on Various Diseases</h1>
-        <p>
-            This project builds upon Geoffrey’s Milestone I project, focusing on cardiovascular mortality.
-            It explores the role of pre-existing conditions and their correlation with cardiovascular and COVID-19 mortality.
-            Utilized the CDC's Behavioral Risk Factor Surveillance System (BRFSS) as the primary dataset.
-            Employed regression, random forest, and K-Nearest Neighbors models for analysis.
-            Unsupervised analysis involved PCA and k-means clustering to identify natural groupings of conditions.
-        </p>
+        <p class="lead">An in-depth analysis of the role of pre-existing conditions in cardiovascular and COVID-19 mortality.</p>
+
+        <section class="mt-4">
+            <h2>Introduction</h2>
+            <p>This project builds upon Geoffrey’s Milestone I project, which focused primarily on cardiovascular mortality. In this extended analysis, we explore the role of pre-existing conditions and their correlation with cardiovascular mortality while adding an additional focus on COVID-19 mortality. Both heart disease and COVID-19 remain leading causes of death in the United States, with pre-existing health conditions significantly influencing the severity and outcomes of these diseases.</p>
+            <p>Our goal is to uncover patterns that can inform public health strategies, targeting high-risk groups and identifying modifiable risk factors that may reduce preventable deaths. This analysis has the potential to impact healthcare policies and practices by highlighting the specific vulnerabilities that contribute to mortality.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Methodology</h2>
+            <p>We utilized the CDC's Behavioral Risk Factor Surveillance System (BRFSS) as our primary dataset, supplementing it with data on cardiovascular and COVID-19 mortality. Our methodology integrates both supervised and unsupervised learning techniques. For the supervised component, we employed regression, random forest, and K-Nearest Neighbors models to predict mortality rates by state and year based on selected features. The unsupervised analysis involved Principal Component Analysis (PCA) and k-means clustering to identify natural groupings of conditions associated with higher mortality risks.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Findings</h2>
+            <p>Our supervised models indicate that K-Nearest Neighbors regression can be effective in predicting COVID-19 mortality based on pre-existing conditions. Additionally, the unsupervised clustering reveals patterns of co-occurring conditions that naturally group into clusters of varying mortality risks, offering valuable insights for public health interventions.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Related Works</h2>
+            <p>We compared our findings with existing studies on mortality prediction using machine learning, highlighting the differences and improvements in our approach.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Data Sources</h2>
+            <ul>
+                <li>Behavior Risk Factor Survey (BRFSS)</li>
+                <li>Cardiovascular Mortality Dataset</li>
+                <li>COVID-19 Mortality Dataset</li>
+                <li>Population Dataset from the U.S. Census Bureau</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Feature Engineering</h2>
+            <p>We performed extensive feature engineering to enhance our datasets, including imputation strategies and data normalization techniques.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Discussion</h2>
+            <p>We learned how various pre-existing conditions and behavioral factors can influence mortality rates. Our analysis provided insights into the effectiveness of different machine learning models and clustering techniques.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Ethical Considerations</h2>
+            <p>We addressed potential ethical issues such as bias in training data and the interpretation of clusters, ensuring our findings are responsibly communicated.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Contributions</h2>
+            <ul>
+                <li><strong>Natalie Larowe:</strong> Led feature selection and supervised learning models.</li>
+                <li><strong>Geoffrey Gin:</strong> Managed data preprocessing and integration.</li>
+                <li><strong>Denesh Chandrahasan:</strong> Developed unsupervised learning models and clustering analysis.</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>GitHub Repository</h2>
+            <p>
+                <a href="https://github.com/geoffgin/Pre-Existing-Factors">
+                    <img src="assets/github_logo.png" alt="GitHub Logo" style="width: 30px; vertical-align: middle;">
+                    geoffgin/Pre-Existing-Factors
+                </a>
+            </p>
+        </section>
     </div>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
