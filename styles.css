@@ -39,6 +39,27 @@ h1, h2 {
     margin: auto;
 }
 
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.intro-text {
+    max-width: 60%;
+}
+
+.intro-image {
+    max-width: 30%;
+}
+
+.headshot {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .card {
     background: white;
     border-radius: 8px;
