@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generative AI SQL Chatbot</title>
+    <title>Chat2DB GenAI Chatbot</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,13 +13,129 @@
     </nav>
 
     <div class="container mt-5">
-        <h1>Generative AI SQL Chatbot</h1>
-        <p>
-            Built a chatbot that converts natural language into SQL using LLMs + RAG/TAG techniques.
-            Containerized the system and deployed a Python-based UI with Streamlit and Docker.
-            Integrated explainability features to track cost and query logic.
-            Use case: enhancing data access for non-technical stakeholders.
-        </p>
+        <h1>Chat2DB GenAI Chatbot</h1>
+        <p class="lead">An LLM-powered chatbot for natural language database queries with extensive observability.</p>
+
+        <section class="mt-4">
+            <h2>Repository</h2>
+            <p>Owner: Geoff Gin</p>
+            <p>Repository: <a href="https://github.com/geoffgin/GenAI-SQL-Chatbot">geoffgin/GenAI-SQL-Chatbot</a></p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Features</h2>
+            <ul>
+                <li>Multiple interaction methods (RAG, TAG)</li>
+                <li>LLM provider selection (OpenAI, Claude)</li>
+                <li>Intent classification (Details in Classifier README)</li>
+                <li>Vector search with PGVector</li>
+                <li>Langfuse Analytics</li>
+                <li>Conversation memory (until browser refresh)</li>
+                <li>Docker-based deployment</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Prerequisites</h2>
+            <ul>
+                <li>Docker and Docker Compose</li>
+                <li>Python 3.9+</li>
+                <li>OpenAI API key</li>
+                <li>Anthropic API key</li>
+                <li>Langfuse account (optional)</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Installation</h2>
+            <ol>
+                <li>Clone the repository and navigate to the directory:
+                    <pre><code>git clone https://github.com/geoffgin/GenAI-SQL-Chatbot.git
+cd GenAI-SQL-Chatbot</code></pre>
+                </li>
+                <li>Configure environment variables: Copy <code>.env.example</code> to <code>.env</code> and fill in your API keys and configurations.</li>
+                <li>Build and start the Docker services (one-off):
+                    <pre><code>make run</code></pre>
+                </li>
+                <li>After the installation, simply run:
+                    <pre><code>make up</code></pre>
+                </li>
+                <li>Or run the application in developer mode:
+                    <pre><code>make dev</code></pre>
+                </li>
+                <li>Shut down the application:
+                    <pre><code>make down</code></pre>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mt-4">
+            <h2>Chatbot Usage</h2>
+            <p>Go to <a href="http://localhost:8501">http://localhost:8501</a> for the main chatbot interface.</p>
+            <ul>
+                <li>Select your preferred interaction method (RAG, TAG)</li>
+                <li>Choose an LLM provider (OpenAI or Claude)</li>
+                <li>Start asking questions about your database</li>
+            </ul>
+            <p>Go to <a href="http://localhost:3000">http://localhost:3000</a> for the Langfuse interface when not running on dev mode.</p>
+        </section>
+
+        <section class="mt-4">
+            <h2>Architecture</h2>
+            <ul>
+                <li>Frontend: Streamlit</li>
+                <li>Document Parsing: Docling</li>
+                <li>Vector Database: PostgreSQL with pgvector</li>
+                <li>Observability: Langfuse</li>
+                <li>LLM Framework: LlamaIndex</li>
+                <li>Container Orchestration: Docker Compose</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Paper References</h2>
+            <ul>
+                <li>RAG (Retrieval-Augmented Generation): Paper by Facebook AI</li>
+                <li>TAG (Table-Augmented Generation): Paper by UC Berkeley & Stanford University</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Data Source Statement</h2>
+            <p>This project uses the Chinook database, a media store database, for development and testing purposes. However, it can be easily adapted for any enterprise or domain-specific use case.</p>
+            <ul>
+                <li><strong>Chinook Database:</strong>
+                    <ul>
+                        <li>Ownership: Maintained by lerocha</li>
+                        <li>Licenses and Use: The Chinook Database allows use, distribution, and modification without any warranty of any kind.</li>
+                        <li>Access: Available on GitHub at <a href="https://github.com/lerocha/chinook-database">Chinook Database</a></li>
+                    </ul>
+                </li>
+                <li><strong>Intent Classifier Data:</strong>
+                    <ul>
+                        <li>GretelAI Synthetic Text-to-SQL:
+                            <ul>
+                                <li>Ownership: Gretel.ai</li>
+                                <li>Licenses and Use: Licensed under the Apache License 2.0, permitting use, distribution, and modification with proper attribution.</li>
+                                <li>Access: Available on Hugging Face at <a href="https://huggingface.co/datasets/gretelai/synthetic_text_to_sql">GretelAI Synthetic Text-to-SQL</a></li>
+                            </ul>
+                        </li>
+                        <li>Factoid WebQuestions Dataset:
+                            <ul>
+                                <li>Ownership: WebQuestions (Berant et al., 2013, CC-BY)</li>
+                                <li>Licenses and Use: Distributed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license, allowing sharing and adaptation with appropriate credit.</li>
+                                <li>Access: Available on GitHub at <a href="https://github.com/brmson/dataset-factoid-webquestions">Factoid WebQuestions Dataset</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Evaluation Framework</h2>
+            <p>Located under the <code>eval</code> sub-folder. Evaluation Framework README is available for detailed instructions.</p>
+        </section>
     </div>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
