@@ -3,20 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 3</title>
+    <title>NYC Real Estate Price Predictor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Geoffrey Gin</a>
+        <a class="navbar-brand" href="index.html">Geoff Gin</a>
     </nav>
 
     <div class="container mt-5">
-        <h1>Project 3</h1>
-        <p>
-            A brief description of Project 3.
-        </p>
+        <h1>NYC Real Estate Price Predictor</h1>
+        <p class="lead">A machine learning model to predict commercial real estate prices in New York City.</p>
+
+        <section class="mt-4">
+            <h2>Features</h2>
+            <ul>
+                <li>Predicts price per square foot and total price for properties</li>
+                <li>Covers all five NYC boroughs</li>
+                <li>Accounts for multiple factors:
+                    <ul>
+                        <li>Property size (gross square feet)</li>
+                        <li>Land size</li>
+                        <li>Building age</li>
+                        <li>Building type (Residential/Commercial/Other)</li>
+                        <li>Location (Borough)</li>
+                    </ul>
+                </li>
+                <li>User-friendly web interface built with Streamlit</li>
+                <li>Model trained on NYC Department of Finance rolling sales data</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Model Performance</h2>
+            <ul>
+                <li>Test R² Score: 0.3770</li>
+                <li>Average prediction error: ~15%</li>
+                <li>Key predictive features:
+                    <ul>
+                        <li>Property size</li>
+                        <li>Location (Borough)</li>
+                        <li>Building age</li>
+                        <li>Land-to-building ratio</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Installation</h2>
+            <ol>
+                <li>Clone the repository:
+                    <pre><code>git clone https://github.com/geoffgin/Real_Estate_Pricing.git
+cd Real_Estate_Pricing</code></pre>
+                </li>
+                <li>Install required packages:
+                    <pre><code>pip install -r requirements.txt</code></pre>
+                </li>
+            </ol>
+        </section>
+
+        <section class="mt-4">
+            <h2>Usage</h2>
+            <ol>
+                <li>Train the model:
+                    <pre><code>python model_training.py</code></pre>
+                </li>
+                <li>Run the web interface:
+                    <pre><code>streamlit run app.py</code></pre>
+                </li>
+                <li>Open your browser and go to <a href="http://localhost:8501">http://localhost:8501</a></li>
+            </ol>
+        </section>
+
+        <section class="mt-4">
+            <h2>Project Structure</h2>
+            <pre><code>nyc-real-estate-predictor/
+├── assets/
+│   ├── nyc-rolling-sales.csv
+│   └── streamlit_interface.png
+├── model_training.py
+├── app.py
+├── nyc_price_model.pkl
+├── requirements.txt
+└── README.md</code></pre>
+        </section>
+
+        <section class="mt-4">
+            <h2>Data</h2>
+            <p>The model is trained on the NYC Department of Finance Rolling Sales Data, which includes:</p>
+            <ul>
+                <li>Property sales prices</li>
+                <li>Building characteristics</li>
+                <li>Location information</li>
+                <li>Usage type</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>Model Details</h2>
+            <ul>
+                <li>Algorithm: XGBoost Regressor</li>
+                <li>Features engineered:
+                    <ul>
+                        <li>Log transformations of square footage</li>
+                        <li>Building age categories</li>
+                        <li>Commercial ratio</li>
+                        <li>Land-to-building ratio</li>
+                        <li>Units per square foot</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h2>GitHub Repository</h2>
+            <p>
+                <a href="https://github.com/geoffgin/Real_Estate_Pricing">
+                    <img src="assets/github_logo.png" alt="GitHub Logo" style="width: 30px; vertical-align: middle;">
+                    geoffgin/Real_Estate_Pricing
+                </a>
+            </p>
+        </section>
     </div>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
